@@ -1,0 +1,28 @@
+body {
+	overflow: hidden;
+	background-color: gray;
+	
+}
+#health-bars {
+    position: relative;
+    z-index: 10; 
+}
+
+progress {
+    width: 200px; 
+    height: 20px; 
+}
+canvas {
+	border: 1px solid #D3D3D3;
+    background-image: url("../images/fondos/fondoDeJuego.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    width: 840px; 
+    height: 680px; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+

@@ -1,0 +1,159 @@
+
+body {
+    background-image: url("../images/fondos/fondo1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  .slideshow-containerP1,
+.slideshow-containerP2 {
+  max-width: 1000px;
+  position: relative;
+  margin: 50px auto;
+  z-index: 1;
+}
+
+.slideshow-containerP1 .mySlides,
+.slideshow-containerP2 .mySlides {
+  display: none;
+}
+
+
+.slideshow-containerP1 .prev, 
+.slideshow-containerP1 .next,
+.slideshow-containerP2 .prev, 
+.slideshow-containerP2 .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 2;
+}
+
+.slideshow-containerP1 .next,
+.slideshow-containerP2 .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.slideshow-containerP1 .prev:hover, 
+.slideshow-containerP1 .next:hover,
+.slideshow-containerP2 .prev:hover, 
+.slideshow-containerP2 .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slideshow-containerP1 .text,
+.slideshow-containerP2 .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.slideshow-containerP1 .numbertext,
+.slideshow-containerP2 .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.slideshow-containerP1 .dot,
+.slideshow-containerP2 .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slideshow-containerP1 .active, 
+.slideshow-containerP1 .dot:hover,
+.slideshow-containerP2 .active, 
+.slideshow-containerP2 .dot:hover {
+  background-color: #717171;
+}
+
+
+.slideshow-containerP1 .fade,
+.slideshow-containerP2 .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: .4; }
+  to { opacity: 1; }
+}
+
+.title {
+  text-align: center;
+  margin-top: 80px; 
+  font-size: 2em; 
+  color: #b9b6b6; 
+}    
+
+
+.slideshow-containerP1 .slide-image,
+.slideshow-containerP2 .slide-image {
+    width: 200px;  
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto;  
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#readyButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#readyButton:hover {
+  background-color: #45a049;
+}

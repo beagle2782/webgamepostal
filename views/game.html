@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/game.css">
+        </head>
+        <body onload="startGame()" style="text-align: center;">
+            
+            <div id="health-bars">
+                <div style="position: absolute; top: 10px; left: 10px; color: aliceblue;">
+                    <progress id="P2'-health" max="100" value="100"></progress>
+                    <span id="P2-health-span"></span>
+                </div>
+                <div style="position: absolute; top: 10px; right: 10px; color: aliceblue;">
+                    <progress id="P1-health" max="100" value="100"></progress>
+                    <span id="P1-health-span"></span>
+                </div>
+            </div>
+
+        <script src="../js/game.js"></script>
+        </body>
+</html>

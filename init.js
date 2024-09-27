@@ -1,6 +1,6 @@
 function startGame() {
-    GameFirstPlayer = new component(32, 32, "black", 210, 240);
-    GameSecondPlayer = new component(32, 32, "red", 530, 240);
+    GameFirstPlayer = new component(32, 32, "images/shotgun/idle/survivor-idle_shotgun_0.png", 210, 240);
+    GameSecondPlayer = new component(32, 32, "images/rifle/idle/survivor-idle_rifle_0.png", 530, 240);
     GameFirstPlayer.team = 0
     GameSecondPlayer.team = 1
     GameObjects = [
@@ -36,7 +36,7 @@ var myGameArea = {
     }
 }
 
-function component(width, height, color, x, y, type, angle, health, team) {
+function component(width, height, imageSrc, x, y, type, angle, health, team) {
     this.type = type;
     this.team = team;
     this.width = width;
@@ -48,13 +48,17 @@ function component(width, height, color, x, y, type, angle, health, team) {
     this.y = y;    
     this.health = health;
 
+    this.image = new Image();
+    this.image.src = imageSrc;
+
     if (this.type == 1) {
 	this.speed = 16;
 	this.angle = angle;
     }
-
+    
     this.newbullet = function() {
-	return new component(4, 4, color, this.x, this.y, 1, this.angle, 1, this.team);
+    let bulletColor = "images/bullet.png";
+	return new component(4, 4, bulletColor, this.x, this.y, 1, this.angle, 1, this.team);
     }
 
     this.update = function() {
@@ -62,8 +66,8 @@ function component(width, height, color, x, y, type, angle, health, team) {
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
-        ctx.fillStyle = color;
-        ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
+        
+        ctx.drawImage(this.image, this.width / -2, this.height / -2, this.width, this.height);
         ctx.restore();
     }
 
