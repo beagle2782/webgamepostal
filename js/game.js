@@ -1,3 +1,8 @@
+
+function generateHealth() {
+    return Math.floor(Math.random() * 100) + 1; // Genera un valor entre 1 y 100
+}
+
 function startGame() {
     const selectedP1 = localStorage.getItem('selectedP1');
     const selectedP2 = localStorage.getItem('selectedP2');
@@ -19,8 +24,8 @@ function startGame() {
     const player1Image = player1Images[selectedP1];
     const player2Image = player2Images[selectedP2];
 
-    GameFirstPlayer = new component(32, 32, player1Image, 210, 240);
-    GameSecondPlayer = new component(32, 32, player2Image, 530, 240);
+    GameFirstPlayer = new component(32, 32, player1Image, 210, 240, 0, 0, generateHealth(), 0);
+    GameSecondPlayer = new component(32, 32, player2Image, 530, 240, 0, 0, generateHealth(), 1);
     GameFirstPlayer.team = 0
     GameSecondPlayer.team = 1
     GameObjects = [
@@ -28,6 +33,7 @@ function startGame() {
 	GameSecondPlayer
 	];
     myGameArea.start();
+    updateHealth();
 }
 
 var myGameArea = {
@@ -158,4 +164,15 @@ function updateGameArea() {
 	GameObjects[i].newPos();
 	GameObjects[i].update();
     }
+}
+
+function updateHealth() {
+    const heroHealthBar = document.getElementById("P1-health");
+    heroHealthBar.value = GameFirstPlayer.health;
+
+    const enemyHealthBar = document.getElementById("P2-health");
+    enemyHealthBar.value = GameSecondPlayer.health;
+
+    document.getElementById("P1-health-span").innerText = `P1 Health: ${GameFirstPlayer.health}`;
+    document.getElementById("P2-health-span").innerText = `P2 Health: ${GameSecondPlayer.health}`;
 }
