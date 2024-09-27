@@ -8,7 +8,7 @@ function startGame() {
     const selectedP2 = localStorage.getItem('selectedP2');
 
     const player1Images = [
-        "../images/rifle/idle/survivor-idle_rifle_1.png",
+        "../images/rifle/idle/survivor-idle_rifle_0.png",
         "../images/shotgun/idle/survivor-idle_shotgun_0.png",
         "../images/handgun/idle/survivor-idle_handgun_0.png",
         "../images/flashlight/idle/survivor-idle_flashlight_0.png"
